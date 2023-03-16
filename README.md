@@ -1,4 +1,4 @@
-# Celestia-Light-Docker
+# Celestia-Light&Full-Docker
 
 1/ Update hệ thống:
 
@@ -10,7 +10,13 @@
     
 3/ Chạy node: sửa IP address => địa chỉ VPS của bạn.
 
-    docker run -e NODE_TYPE=light -e P2P_NETWORK=blockspacerace ghcr.io/celestiaorg/celestia-node:v0.7.1 celestia light start --core.ip <IP address> --gateway --gateway.addr 127.0.0.1 --gateway.port 26659 --p2p.network mocha
+Dành cho chạy Light node:
+
+    docker run -e NODE_TYPE=light -e P2P_NETWORK=blockspacerace ghcr.io/celestiaorg/celestia-node:v0.7.1 celestia light start --core.ip IP_ADDRESS --gateway --gateway.addr 127.0.0.1 --gateway.port 26659 --p2p.network mocha
+    
+Dành cho chạy Full node:
+
+    docker run -e NODE_TYPE=full -e P2P_NETWORK=blockspacerace ghcr.io/celestiaorg/celestia-node:v0.7.1 celestia full start --core.ip IP_ADDRESS --gateway --gateway.addr 127.0.0.1 --gateway.port 26659 --p2p.network mocha
     
 4/ Lưu thông tin ví lại, sẽ có dạng:
 
